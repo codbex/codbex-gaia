@@ -1,0 +1,1 @@
+java -jar ./application/target/codbex-gaia-application-0.1.0-SNAPSHOT.jar
