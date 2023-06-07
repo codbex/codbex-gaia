@@ -12,7 +12,7 @@
     <description>codbex gaia</description>
     <groupId>com.codbex.gaia</groupId>
     <artifactId>codbex-gaia-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.3.0</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2022</inceptionYear>
