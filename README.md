@@ -9,7 +9,7 @@ It is used as a basis platform for products build with and for `codbex` tools an
 
 ```
 docker pull ghcr.io/codbex/codbex-gaia:latest
-docker run --name codbex-gaia --rm -p 8080:8080 ghcr.io/codbex/codbex-gaia:latest
+docker run --name codbex-gaia --rm -p 80:80 ghcr.io/codbex/codbex-gaia:latest
 ```
 
 - For Apple's M1: provide `--platform=linux/arm64` for better performance		
@@ -35,6 +35,6 @@ java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 -jar app
 #### REST API
 
 ```
-http://localhost:8080/swagger-ui/index.html
+http://localhost/swagger-ui/index.html
 ```
 
