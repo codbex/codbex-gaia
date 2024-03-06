@@ -21,7 +21,6 @@
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-group-core</artifactId>
-			<version>${dirigible.version}</version>
 			<type>pom</type>
 			<exclusions>
 				<exclusion>
@@ -35,19 +34,16 @@
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-security-basic</artifactId>
-			<version>${dirigible.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-security-keycloak</artifactId>
-			<version>${dirigible.version}</version>
 		</dependency>
 		
 		<!-- Data -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-group-database</artifactId>
-			<version>${dirigible.version}</version>
 			<type>pom</type>
 		</dependency>
 		
@@ -55,7 +51,6 @@
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-group-engines-core</artifactId>
-			<version>${dirigible.version}</version>
 			<type>pom</type>
 		</dependency>
 		
@@ -63,7 +58,6 @@
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-group-api-platform</artifactId>
-			<version>${dirigible.version}</version>
 			<type>pom</type>
 		</dependency>
 		
@@ -71,7 +65,6 @@
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-group-resources</artifactId>
-			<version>${dirigible.version}</version>
 			<type>pom</type>
 		</dependency>
 		
@@ -83,7 +76,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>${spring.boot.version}</version>
 				<configuration>
 					<mainClass>com.codbex.gaia.GaiaApplication</mainClass>
 				</configuration>
@@ -95,23 +87,23 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>${git-commit-id-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>get-the-git-infos</id>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<dotGitDirectory>../.git</dotGitDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
-		<plugin>
-			<groupId>pl.project13.maven</groupId>
-			<artifactId>git-commit-id-plugin</artifactId>
-			<version>${git-commit-id-plugin.version}</version>
-			<executions>
-				<execution>
-					<id>get-the-git-infos</id>
-					<goals>
-						<goal>revision</goal>
-					</goals>
-				</execution>
-			</executions>
-			<configuration>
-				<dotGitDirectory>../.git</dotGitDirectory>
-			</configuration>
-		</plugin>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
