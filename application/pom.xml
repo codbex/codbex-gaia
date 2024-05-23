@@ -14,7 +14,6 @@
 	<artifactId>codbex-gaia-application</artifactId>
 	<packaging>jar</packaging>
 
-
 	<dependencies>
 
 		<!-- Core -->
@@ -76,44 +75,8 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>com.codbex.gaia.GaiaApplication</mainClass>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>pl.project13.maven</groupId>
-				<artifactId>git-commit-id-plugin</artifactId>
-				<version>${git-commit-id-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>get-the-git-infos</id>
-						<goals>
-							<goal>revision</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<dotGitDirectory>../.git</dotGitDirectory>
-				</configuration>
 			</plugin>
 		</plugins>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
 	</build>
-
-    <properties>
-        <license.header.location>../licensing-header.txt</license.header.location>
-    </properties>
 
 </project>
