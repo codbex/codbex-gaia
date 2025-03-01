@@ -1,4 +1,8 @@
-# codbex-gaia
+# Gaia by codbex
+
+[![Build Status](https://github.com/codbex/codbex-gaia/actions/workflows/build.yaml/badge.svg)](https://github.com/codbex/codbex-gaia/actions/workflows/build.yaml)
+[![Eclipse License](https://img.shields.io/badge/License-EPL%202.0-brightgreen.svg)](https://github.com/codbex/codbex-gaia/blob/main/LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/com.codbex.gaia/codbex-gaia-application.svg)](https://central.sonatype.com/namespace/com.codbex.gaia)
 
 Gaia Edition contains all the available backend standard components except the Web IDE ones.
 
