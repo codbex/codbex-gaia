@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -10,77 +10,87 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-	<name>codbex - gaia - application</name>
-	<artifactId>codbex-gaia-application</artifactId>
-	<packaging>jar</packaging>
+    <name>codbex - gaia - application</name>
+    <artifactId>codbex-gaia-application</artifactId>
+    <packaging>jar</packaging>
 
-	<dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ide-console</artifactId>
+        </dependency>
+        <!-- Core -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-group-core</artifactId>
+            <type>pom</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.zaxxer</groupId>
+                    <artifactId>HikariCP-java7</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
-		<!-- Core -->
-		<dependency>
-			<groupId>org.eclipse.dirigible</groupId>
-			<artifactId>dirigible-components-group-core</artifactId>
-			<type>pom</type>
-			<exclusions>
-				<exclusion>
-					<groupId>com.zaxxer</groupId>
-					<artifactId>HikariCP-java7</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		
-		<!-- Security -->
-		<dependency>
-			<groupId>org.eclipse.dirigible</groupId>
-			<artifactId>dirigible-components-security-basic</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.dirigible</groupId>
-			<artifactId>dirigible-components-security-keycloak</artifactId>
-		</dependency>
-		
-		<!-- Data -->
-		<dependency>
-			<groupId>org.eclipse.dirigible</groupId>
-			<artifactId>dirigible-components-group-database</artifactId>
-			<type>pom</type>
-		</dependency>
-		
-		<!-- Engine -->
-		<dependency>
-			<groupId>org.eclipse.dirigible</groupId>
-			<artifactId>dirigible-components-group-engines-core</artifactId>
-			<type>pom</type>
-		</dependency>
-		
-		<!-- API -->
-		<dependency>
-			<groupId>org.eclipse.dirigible</groupId>
-			<artifactId>dirigible-components-group-api-platform</artifactId>
-			<type>pom</type>
-		</dependency>
-		
-		<!-- Resources -->
-		<dependency>
-			<groupId>org.eclipse.dirigible</groupId>
-			<artifactId>dirigible-components-group-resources</artifactId>
-			<type>pom</type>
-		</dependency>
-		
-	</dependencies>
+        <!-- Security -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-security-basic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-security-keycloak</artifactId>
+        </dependency>
+
+        <!-- Data -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-group-database</artifactId>
+            <type>pom</type>
+        </dependency>
+
+        <!-- Engine -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-group-engines-core</artifactId>
+            <type>pom</type>
+        </dependency>
+
+        <!-- API -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-group-api-platform</artifactId>
+            <type>pom</type>
+        </dependency>
+
+        <!-- Resources -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-group-resources</artifactId>
+            <type>pom</type>
+        </dependency>
+
+        <!-- Tests -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-tests-framework</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
