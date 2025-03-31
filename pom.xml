@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.codbex.platform</groupId>
         <artifactId>codbex-platform-parent</artifactId>
-        <version>11.11.0</version>
+        <version>11.16.0</version>
     </parent>
 
     <name>codbex - gaia - parent</name>
@@ -28,6 +28,7 @@
 
     <modules>
         <module>application</module>
+        <module>integration-tests</module>
     </modules>
 
     <properties>
@@ -148,5 +149,15 @@
             <type>pom</type>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.codbex.gaia</groupId>
+                <artifactId>codbex-gaia-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

@@ -70,13 +70,6 @@
             <type>pom</type>
         </dependency>
 
-        <!-- Tests -->
-        <dependency>
-            <groupId>org.eclipse.dirigible</groupId>
-            <artifactId>dirigible-tests-framework</artifactId>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
 
@@ -89,6 +82,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>executable</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
