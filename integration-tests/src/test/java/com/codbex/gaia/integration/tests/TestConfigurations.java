@@ -8,11 +8,12 @@
  * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
  * SPDX-License-Identifier: EPL-2.0
  */
-package com.codbex.gaia.ui.tests;
+package com.codbex.gaia.integration.tests;
 
-import org.eclipse.dirigible.tests.UserInterfaceIntegrationTest;
-import org.springframework.context.annotation.Import;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
-@Import(TestConfigurations.class)
-public abstract class GaiaIntegrationTest extends UserInterfaceIntegrationTest {
+@ComponentScan(basePackages = "org.eclipse.dirigible")
+@TestConfiguration
+class TestConfigurations {
 }

@@ -8,12 +8,13 @@
  * SPDX-FileCopyrightText: 2022 codbex or an codbex affiliate company and contributors
  * SPDX-License-Identifier: EPL-2.0
  */
-package com.codbex.gaia.ui.tests;
+package org.eclipse.dirigible;
 
-import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = "org.eclipse.dirigible")
-@TestConfiguration
-class TestConfigurations {
+@SpringBootConfiguration
+@ComponentScan(basePackages = {"org.eclipse.dirigible", "com.codbex"})
+class DirigibleCommonTestsConfiguration {
+    // this class is needed for the dirigible tests suite
 }
