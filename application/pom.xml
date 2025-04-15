@@ -41,6 +41,14 @@
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-security-keycloak</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-security-cognito</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-security-snowflake</artifactId>
+        </dependency>
 
         <!-- Data -->
         <dependency>
