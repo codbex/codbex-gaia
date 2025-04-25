@@ -19,6 +19,10 @@
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-resources-dashboard</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-api-cms</artifactId>
+        </dependency>
         <!-- Core -->
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
