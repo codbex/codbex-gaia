@@ -15,6 +15,12 @@
     <packaging>jar</packaging>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.codbex.gaia</groupId>
+            <artifactId>codbex-gaia-branding</artifactId>
+        </dependency>
+
         <!-- Core -->
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
@@ -86,7 +92,7 @@
         <!-- Resources -->
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
-            <artifactId>dirigible-components-group-resources</artifactId>
+            <artifactId>dirigible-components-group-resources-ui</artifactId>
             <type>pom</type>
         </dependency>
         <dependency>
@@ -97,15 +103,25 @@
         <!-- UI -->
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
-            <artifactId>dirigible-components-ui-platform-core</artifactId>
+            <artifactId>dirigible-components-resources-platform-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
-            <artifactId>dirigible-components-ui-platform-branding</artifactId>
+            <artifactId>dirigible-components-resources-platform-branding</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ui-window-about</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-ui-service-workspace</artifactId>
+        </dependency>
+
+        <!-- IDE UI -->
+        <dependency>
+            <groupId>com.codbex.gaia</groupId>
+            <artifactId>codbex-gaia-components-ui-menu-help</artifactId>
         </dependency>
 
     </dependencies>
