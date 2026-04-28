@@ -99,6 +99,14 @@
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-resources-dashboard</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-resources-inbox</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-resources-documents</artifactId>
+        </dependency>
 
         <!-- UI -->
         <dependency>
