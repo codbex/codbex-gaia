@@ -61,6 +61,22 @@ Formatting is enforced; run this before committing Java changes.
 
 `branding` and `components/*` are not normal Java modules — they ship **Dirigible content** under `src/main/resources/META-INF/dirigible/<guid>/`. Each has a `project.json` (with a `guid`) and may contain `extensions/*.extension`, `configs/*.js`, `translations/<locale>/translation.json`, HTML, images, etc. These are scanned and served at runtime by the Dirigible engine. When adding content, follow this directory structure and register menu items / behavior via `.extension` files.
 
+## Product ecosystem
+
+Per the README, Gaia is the **basis platform for products built with and for codbex tools and runtimes** — it bundles the standard backend components (minus the Web IDE) that the customer-facing codbex products extend. Those products are documented at https://www.codbex.com/products/ and include:
+
+- **Atlas** — all-in-one platform with the full set of standard components.
+- **Helios** — enterprise API development platform.
+- **Hades** — multi-database management tool (PostgreSQL, MySQL, SAP HANA, H2, …).
+- **Oceanus** — document management for CMIS-compliant repositories.
+- **Hyperion** — BPM platform (BPMN 2.0 on the Flowable engine).
+- **Iapetus** — integration / ETL management on Apache Camel.
+- **Rhea** — model-driven architecture (entities, forms, reports).
+- **Kronos** — XS/ABAP compatibility platform.
+- **Phoebe** — data-centric workflow platform on Apache Airflow (note the `PHOEBE_AIRFLOW_WORK_DIR` env var referenced in the README run steps).
+
+When working here, remember changes affect the shared foundation those products inherit, not just a single application.
+
 ## Versioning
 
 This repo's version is `3.0.0-SNAPSHOT`; releases bump it and the `codbex-platform-parent` version together (see recent commits). Bumping platform capabilities usually means bumping the parent version in the root `pom.xml`.
