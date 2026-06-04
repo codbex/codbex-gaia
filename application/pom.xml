@@ -77,6 +77,10 @@
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-engine-bpm-flowable</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-engine-openapi</artifactId>
+        </dependency>
 
         <!-- API -->
         <dependency>
@@ -124,6 +128,10 @@
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-ui-service-workspace</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ui-view-swagger</artifactId>
         </dependency>
 
         <!-- IDE UI -->
