@@ -18,7 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableJpaAuditing
 @EnableJpaRepositories
-@SpringBootApplication(scanBasePackages = {"com.codbex.gaia", "org.eclipse.dirigible.components"})
+@SpringBootApplication(scanBasePackages = {"com.codbex.gaia", "org.eclipse.dirigible.components", "org.eclipse.dirigible.engine"})
 @EnableScheduling
 public class GaiaApplication {
 
