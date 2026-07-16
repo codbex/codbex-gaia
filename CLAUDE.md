@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Gaia is a packaging/edition of the **codbex platform**, itself built on **Eclipse Dirigible**. It is not a standalone application with much logic of its own — it is a thin Spring Boot launcher that assembles a curated set of Dirigible `dirigible-components-*` dependencies into a runnable backend platform (the "Gaia Edition" — all standard backend components except the Web IDE ones). Most behavior lives in the Dirigible and `codbex-platform-parent` (`com.codbex.platform:codbex-platform-parent:12.90.0`) artifacts, not in this repo.
+Gaia is a packaging/edition of the **codbex platform**, itself built on **Eclipse Dirigible**. It is not a standalone application with much logic of its own — it is a thin Spring Boot launcher that assembles a curated set of Dirigible `dirigible-components-*` dependencies into a runnable backend platform (the "Gaia Edition" — all standard backend components except the Web IDE ones). Most behavior lives in the Dirigible and `codbex-platform-parent` (`com.codbex.platform:codbex-platform-parent` — see the root `pom.xml` for the current version, e.g. `14.0.0`) artifacts, not in this repo.
 
 ## Build & run
 
@@ -52,7 +52,7 @@ Formatting is enforced; run this before committing Java changes.
 
 ## Module layout
 
-- **application/** — the Spring Boot app. `GaiaApplication` (`@SpringBootApplication` scanning `com.codbex.gaia` + `org.eclipse.dirigible.components`) is the entry point. Its `pom.xml` is the real definition of the edition: the list of `dirigible-components-*` dependencies there determines which engines/APIs/UI resources are bundled (core, security basic/keycloak/cognito/snowflake, database, BPM flowable, CMS, dashboard, inbox, documents, etc.). To add or remove a platform capability, edit this dependency list.
+- **application/** — the Spring Boot app. `GaiaApplication` (`@SpringBootApplication` scanning `com.codbex.gaia` + `org.eclipse.dirigible.components`) is the entry point. Its `pom.xml` is the real definition of the edition: the list of `dirigible-components-*` dependencies there determines which engines/APIs/UI resources are bundled (core, security basic/keycloak/cognito/snowflake, database, BPM flowable, CMS, dashboard, inbox, documents, the Harmonia app shells `resources-application`/`resources-my`/`resources-partner` served at `/services/web/{application,my,partner}/`, etc.). To add or remove a platform capability, edit this dependency list. Gaia cherry-picks individual artifacts rather than pulling Dirigible's `group-ui`/`group-ide` poms (which Atlas uses), because those groups also drag in Web IDE pieces and `dirigible-components-ui-menu-help` (replaced here by the custom `codbex-gaia-components-ui-menu-help`). When a `/services/web/<x>/` path 404s that works on Atlas, the fix is usually adding the matching `dirigible-components-resources-<x>` (content jars ship `META-INF/dirigible/<x>/`); the shared webjars (alpinejs, @codbex/harmonia, lucide, pinecone-router, i18next) come transitively from `resources-application-core` in `group-resources-ui`.
 - **branding/** — logo/favicon and `project.json` packaged as a Dirigible content project under `META-INF/dirigible/gaia-branding/`.
 - **components/** — Gaia-specific Dirigible content components (currently only `ui/menu-help`). New custom UI/content lives here.
 - **integration-tests/** — UI/integration tests against the assembled platform.
