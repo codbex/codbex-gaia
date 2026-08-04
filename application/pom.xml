@@ -139,6 +139,14 @@
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-resources-partner</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-resources-admin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-resources-home</artifactId>
+        </dependency>
 
         <!-- UI -->
         <dependency>
