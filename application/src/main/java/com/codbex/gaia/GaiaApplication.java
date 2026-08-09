@@ -16,9 +16,20 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+/**
+ * The Gaia edition's entry point.
+ *
+ * <p>
+ * The scan covers {@code org.eclipse.dirigible.commons} for a single bean,
+ * {@code ConsoleWebsocketConfig}, which publishes the platform logging appender's stream at
+ * {@code /websockets/ide/console} - the live source behind the Monitoring shell's Logs page.
+ * Upstream picks it up because its application class sits in {@code org.eclipse.dirigible} and
+ * scans the whole tree; this edition names its packages, so it has to name that one too.
+ */
 @EnableJpaAuditing
 @EnableJpaRepositories
-@SpringBootApplication(scanBasePackages = {"com.codbex.gaia", "org.eclipse.dirigible.components", "org.eclipse.dirigible.engine"})
+@SpringBootApplication(scanBasePackages = {"com.codbex.gaia", "org.eclipse.dirigible.components", "org.eclipse.dirigible.engine",
+        "org.eclipse.dirigible.commons"})
 @EnableScheduling
 public class GaiaApplication {
 

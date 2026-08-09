@@ -117,10 +117,6 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
-            <artifactId>dirigible-components-resources-dashboard</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-resources-inbox</artifactId>
         </dependency>
         <dependency>
@@ -133,7 +129,7 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
-            <artifactId>dirigible-components-resources-my</artifactId>
+            <artifactId>dirigible-components-resources-personal</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
@@ -146,6 +142,39 @@
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-resources-home</artifactId>
+        </dependency>
+
+        <!--
+            Monitoring - the operations shell at /services/web/monitoring/ plus the three backends
+            its pages read. Kept together so the capability is added or dropped in one edit.
+            The Overview, Jobs and Processes pages read core-healthcheck, core-base, engine-jobs
+            and engine-bpm-flowable, which the edition already bundles.
+        -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-resources-monitoring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ide-monitoring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ide-logs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ide-messaging-monitoring</artifactId>
+        </dependency>
+        <!--
+            The Processes page renders the live BPMN diagram with the same visualizer the IDE uses.
+            Upstream ships this webjar through ui-perspective-processes, which is Web IDE content
+            this edition does not bundle, so it is declared here directly.
+        -->
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>bpmn-visualization</artifactId>
+            <version>0.47.0</version>
         </dependency>
 
         <!-- UI -->
