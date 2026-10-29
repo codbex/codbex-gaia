@@ -16,6 +16,11 @@
 
     <dependencies>
 
+        <!--
+            No server-side JavaScript/TypeScript (GraalJS): group-javascript is not bundled, and the JavaScript
+            SDK (api-modules-javascript), which many Dirigible modules declare, is excluded wherever it comes in.
+        -->
+
         <dependency>
             <groupId>com.codbex.gaia</groupId>
             <artifactId>codbex-gaia-branding</artifactId>
@@ -30,6 +35,10 @@
                 <exclusion>
                     <groupId>com.zaxxer</groupId>
                     <artifactId>HikariCP-java7</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.eclipse.dirigible</groupId>
+                    <artifactId>dirigible-components-api-modules-javascript</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -65,6 +74,12 @@
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-data-store-java</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.dirigible</groupId>
+                    <artifactId>dirigible-components-api-modules-javascript</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Engine -->
@@ -75,12 +90,13 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
-            <artifactId>dirigible-components-group-javascript</artifactId>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-engine-java</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.dirigible</groupId>
+                    <artifactId>dirigible-components-api-modules-javascript</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
@@ -101,6 +117,12 @@
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-engine-websockets</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.dirigible</groupId>
+                    <artifactId>dirigible-components-api-modules-javascript</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- API -->
@@ -108,10 +130,22 @@
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-group-api-platform</artifactId>
             <type>pom</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.dirigible</groupId>
+                    <artifactId>dirigible-components-api-modules-javascript</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-api-cms</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.dirigible</groupId>
+                    <artifactId>dirigible-components-api-modules-javascript</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- Resources -->
