@@ -11,10 +11,19 @@
 package org.eclipse.dirigible;
 
 import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.context.TypeExcludeFilter;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 
+/**
+ * Like Spring Boot's own component scan, the scan leaves the test configurations to the tests that
+ * import them. It also leaves out the JavaScript test helpers of the Dirigible tests suite: they
+ * need the server-side JavaScript engine (GraalJS), which this product does not ship.
+ */
 @SpringBootConfiguration
-@ComponentScan(basePackages = {"org.eclipse.dirigible", "com.codbex"})
+@ComponentScan(basePackages = {"org.eclipse.dirigible", "com.codbex"},
+        excludeFilters = {@ComponentScan.Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class), @ComponentScan.Filter(
+                type = FilterType.REGEX, pattern = "org\\.eclipse\\.dirigible\\.integration\\.tests\\.api\\.javascript\\..*")})
 class DirigibleCommonTestsConfiguration {
     // this class is needed for the dirigible tests suite
 }
