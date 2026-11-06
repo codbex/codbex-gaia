@@ -60,7 +60,7 @@ Formatting is enforced; run this before committing Java changes.
 
 ## Dirigible content convention
 
-`branding` and `components/*` are not normal Java modules — they ship **Dirigible content** under `src/main/resources/META-INF/dirigible/<guid>/`. Each has a `project.json` (with a `guid`) and may contain `extensions/*.extension`, `configs/*.js`, `translations/<locale>/translation.json`, HTML, images, etc. These are scanned and served at runtime by the Dirigible engine. When adding content, follow this directory structure and register menu items / behavior via `.extension` files.
+`branding` and `components/*` are not normal Java modules — they ship **Dirigible content** under `src/main/resources/META-INF/dirigible/<guid>/`. Each has a `project.json` (with a `guid`) and may contain `extensions/*.extension`, `configs/*.json`, `translations/<locale>/translation.json`, HTML, images, etc. These are scanned and served at runtime by the Dirigible engine. Gaia ships no server-side JavaScript engine, so an extension module must be a `.json` file: a `.js` module is skipped. When adding content, follow this directory structure and register menu items / behavior via `.extension` files.
 
 ## Product context
 
