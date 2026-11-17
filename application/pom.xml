@@ -102,6 +102,14 @@
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-engine-websockets</artifactId>
         </dependency>
+        <!--
+            Issues: the backend of the shells' Issues page and "Report an issue" (/services/issues),
+            and of the operator page in the Monitoring shell. Without it the shells hide both.
+        -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-engine-issues</artifactId>
+        </dependency>
 
         <!-- API -->
         <dependency>
